@@ -10,7 +10,7 @@
   
 练习前十章的重要内容：  
 PyQGIS开发者手册中文翻译版（ https://luolingchun.github.io/PyQGIS-Developer-Cookbook-cn/ ）  
-保存为qgis_test.ipynb文件（ https://nbviewer.jupyter.org/github/songxinyi618/Play_around_with_QGIS/blob/master/qgis_test.ipynb ）
+保存为qgis_test.ipynb文件（ http://nbviewer.jupyter.org/github/songxinyi618/Play_around_with_QGIS/blob/master/qgis_test.ipynb ）
 
 练习第十七章网络分析库：  
 参考同事在知乎上的翻译稿（ https://zhuanlan.zhihu.com/p/105908739 ）  
