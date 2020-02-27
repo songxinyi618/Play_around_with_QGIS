@@ -1,5 +1,5 @@
 # Play_around_with_QGIS
-一句话介绍：在某个项目中用python调用QGIS，这是参考PyQGIS开发者手册的中文版做的练习。
+一句话介绍：在某个项目中用python调用QGIS，这是参考PyQGIS开发者手册做的练习。
 
 语言：Python 3.7.6  
 软件：Jupyter Notebook
