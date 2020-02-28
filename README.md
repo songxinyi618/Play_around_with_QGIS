@@ -17,4 +17,6 @@ PyQGIS开发者手册中文翻译版（ https://luolingchun.github.io/PyQGIS-Dev
 参考同事在知乎上的翻译稿（ https://zhuanlan.zhihu.com/p/105908739 ）  
 QGIS 3.4开发者手册第十七章英文版  
 （ https://docs.qgis.org/3.4/en/docs/pyqgis_developer_cookbook/network_analysis.html ）  
-QGIS 2.x 和 QGIS 3.x 对比（ https://qgis.org/api/api_break.html ）
+QGIS 2.x 和 QGIS 3.x 对比（ https://qgis.org/api/api_break.html ）  
+保存为qgis_test_17.ipynb文件，打不开时可通过以下链接打开  
+（ http://nbviewer.jupyter.org/github/songxinyi618/Play_around_with_QGIS/blob/master/qgis_test_17.ipynb ）
