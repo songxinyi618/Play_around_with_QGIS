@@ -1,0 +1,50 @@
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+
+from qgis.core import *
+from qgis.gui import *
+from qgis.analysis import *
+
+vl = qgis.utils.iface.mapCanvas().currentLayer()
+director = QgsVectorLayerDirector(vl, 11, '2', '3', '1', 3)
+strategy = QgsNetworkDistanceStrategy()
+director.addStrategy(strategy)
+myCRS =  QgsCoordinateReferenceSystem("EPSG:4326")
+builder = QgsGraphBuilder(myCRS)
+
+pStart = QgsPointXY(120.56646, 31.28188)
+delta = qgis.utils.iface.mapCanvas().getCoordinateTransform().mapUnitsPerPixel() * 1
+
+rb = QgsRubberBand(qgis.utils.iface.mapCanvas(), True)
+rb.setColor(Qt.green)
+rb.addPoint(QgsPointXY(pStart.x() - delta, pStart.y() - delta))
+rb.addPoint(QgsPointXY(pStart.x() + delta, pStart.y() - delta))
+rb.addPoint(QgsPointXY(pStart.x() + delta, pStart.y() + delta))
+rb.addPoint(QgsPointXY(pStart.x() - delta, pStart.y() + delta))
+
+tiedPoints = director.makeGraph(builder, [pStart])
+graph = builder.graph()
+tStart = tiedPoints[0]
+
+idStart = graph.findVertex(tStart)
+
+(tree, cost) = QgsGraphAnalyzer.dijkstra(graph, idStart, 0)
+
+upperBound = []
+r = 200
+i = 0
+while i < len(cost):
+  if cost[i] >= r and tree[i] != -1:
+    fromVertexId = graph.edge(tree[i]).fromVertex()
+    if cost[fromVertexId] <= r:
+      upperBound.append(i)
+  i = i + 1
+
+for i in upperBound:
+  centerPoint = graph.vertex(i).point()
+  rb = QgsRubberBand(qgis.utils.iface.mapCanvas(), True)
+  rb.setColor(Qt.red)
+  rb.addPoint(QgsPointXY(centerPoint.x() - delta, centerPoint.y() - delta))
+  rb.addPoint(QgsPointXY(centerPoint.x() + delta, centerPoint.y() - delta))
+  rb.addPoint(QgsPointXY(centerPoint.x() + delta, centerPoint.y() + delta))
+  rb.addPoint(QgsPointXY(centerPoint.x() - delta, centerPoint.y() + delta))
