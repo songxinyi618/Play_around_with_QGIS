@@ -20,4 +20,4 @@ QGIS 3.4开发者手册第十七章英文版
 QGIS 2.x 和 QGIS 3.x 对比（ https://qgis.org/api/api_break.html ）  
 保存为qgis_test_17.ipynb文件，打不开时可通过以下链接打开  
 （ http://nbviewer.jupyter.org/github/songxinyi618/Play_around_with_QGIS/blob/master/qgis_test_17.ipynb ）
-也可在QGIS操作台中打开caozuotai.scpt
+也可在QGIS操作台中按照caozuotai文件命令执行
