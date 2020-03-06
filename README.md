@@ -5,6 +5,10 @@
 软件：Jupyter Notebook
 
 在Anaconda中安装QGIS：  
+·conda创建一个虚拟环境，不指定python版本  
+·在该环境下，用清华镜像安装qgis-3.4.14  
+·在该环境下，安装jupyter notbook，并调用
+·Import qgis.core如果没报错就成功了
 参考同事在知乎上的文章（ https://zhuanlan.zhihu.com/p/103870189 ）  
 安装时用到了清华镜像（ https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ ）
   
